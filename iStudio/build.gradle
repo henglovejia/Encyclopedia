@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion "30.0.2"
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "heng.examples.encyclopedia"
@@ -33,10 +33,10 @@ android {
 }
 
 dependencies {
-
     implementation kotlin_libs.'stdlib-core'
     implementation androidx.compat
     implementation androidx.appcompat
     implementation androidx.material
     implementation androidx.constraintlayout
+    implementation project(path: ':framwork:component')
 }

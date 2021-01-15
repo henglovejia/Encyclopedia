@@ -1,2 +1,8 @@
-include ':app'
 rootProject.name = "Encyclopedia"
+include ':iStudio'
+include ':framwork:widget'
+include ':framwork:network'
+include ':app:advance'
+include ':app:debug'
+include ':app:basic'
+include ':framwork:component'
