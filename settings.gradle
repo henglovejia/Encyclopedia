@@ -1,2 +1,9 @@
 include ':app'
 rootProject.name = "Encyclopedia"
+
+def compositeBuilds = [
+        'framework/network',
+        'framework/widget',
+]
+
+compositeBuilds.findAll { file(it).directory }.each { includeBuild(it) }
