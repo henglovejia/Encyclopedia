@@ -1,11 +1,8 @@
+rootProject.name = "Encyclopedia"
+include ':iStudio'
 include ':framwork:widget'
 include ':framwork:network'
-include ':app'
-rootProject.name = "Encyclopedia"
-
-def compositeBuilds = [
-        'framework/network',
-        'framework/widget'
-]
-
-compositeBuilds.findAll { file(it).directory }.each { includeBuild(it) }
+include ':app:advance'
+include ':app:debug'
+include ':app:basic'
+include ':framwork:component'
