@@ -1,4 +1,4 @@
-package heng.framework.widget
+package study.examples.widget
 
 import org.junit.Test
 

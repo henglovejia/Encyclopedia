@@ -1,4 +1,4 @@
-package heng.framework.widget
+package study.examples.widget
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("heng.framework.widget.test", appContext.packageName)
+        assertEquals("study.examples.widget.test", appContext.packageName)
     }
 }

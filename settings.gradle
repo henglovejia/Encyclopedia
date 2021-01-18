@@ -1,9 +1,11 @@
+include ':framwork:widget'
+include ':framwork:network'
 include ':app'
 rootProject.name = "Encyclopedia"
 
 def compositeBuilds = [
         'framework/network',
-        'framework/widget',
+        'framework/widget'
 ]
 
 compositeBuilds.findAll { file(it).directory }.each { includeBuild(it) }
