@@ -6,12 +6,17 @@ ext {
     kotlin_version = "1.4.20"
 
     okhttpVersion = "4.9.0"
+    aRouterVersion = "1.5.1"
+    frescoVersion = "2.3.0"
 }
 
 ext {
     thirdparty = ['okhttp3'                    : "com.squareup.okhttp3:okhttp:$okhttpVersion",
                   'okhttp3-logging-interceptor': "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
-                  'okhttp3-mockserver'         : "com.squareup.okhttp3:mockwebserver:$okhttpVersion"]
+                  'okhttp3-mockserver'         : "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+                  'arouter-api'                : "com.alibaba:arouter-api:$aRouterVersion",
+                  'arouter-compiler'           : "com.alibaba:arouter-compiler:$aRouterVersion",
+                  'fresco'                     : "com.facebook.fresco:fresco:$frescoVersion"]
 
     androidx = ['constraintlayout': "androidx.constraintlayout:constraintlayout:2.0.4",
                 'viewpage2'       : "androidx.viewpager2:viewpager2:1.0.0",

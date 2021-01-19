@@ -1,11 +1,10 @@
 package heng.examples.encyclopedia
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
+import study.examples.component.activity.BaseActivity
+import study.examples.constant.MAIN_PAGE
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+@Route(path = MAIN_PAGE)
+class MainActivity : BaseActivity() {
+    override fun getLayoutId() = R.layout.activity_main
 }
