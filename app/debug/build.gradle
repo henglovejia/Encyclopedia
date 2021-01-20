@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -12,9 +13,13 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -38,4 +43,8 @@ dependencies {
     implementation androidx.appcompat
     implementation androidx.material
     implementation androidx.constraintlayout
+    implementation thirdparty.'arouter-api'
+    kapt thirdparty.'arouter-compiler'
+    implementation project(path: ':framwork:component')
+    implementation project(path: ':framwork:constant')
 }

@@ -1,11 +1,11 @@
 package study.examples.component.fragment
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/18 5:30 下午
  * @email 932805400@qq.com
  */
-abstract class BaseListFragment : BaseFragment() {
+abstract class BaseListFragment : BaseLogFragment() {
     /**
      * 获取RecycleView ID
      */

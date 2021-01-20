@@ -1,10 +1,56 @@
 package heng.examples.encyclopedia
 
+import android.os.Bundle
+import android.view.MenuItem
+import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
-import study.examples.component.activity.BaseActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import heng.examples.encyclopedia.adapter.NavigationAdapter
+import study.examples.component.activity.BaseLogActivity
+import study.examples.component.log.logE
 import study.examples.constant.MAIN_PAGE
 
 @Route(path = MAIN_PAGE)
-class MainActivity : BaseActivity() {
+class MainActivity : BaseLogActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+    private lateinit var mBottomNavigation: BottomNavigationView
+    private lateinit var mMainPage: ViewPager
+    private val mFragments by lazy {
+        resources.getStringArray(R.array.navigation_fragments)
+    }
+
     override fun getLayoutId() = R.layout.activity_main
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mBottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation).apply {
+            labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+        }
+        mMainPage = findViewById(R.id.main_pager)
+        addNavigationMenus()
+    }
+
+    private fun addNavigationMenus() {
+        val navigationTitles = resources.getStringArray(R.array.navigation_titles)
+        if (navigationTitles.size != mFragments.size) {
+            ("init navigation menu failure because the number of " +
+                    "title:${navigationTitles.size} and fragment:${mFragments.size} " +
+                    "is not match").logE(this)
+            return
+        }
+        mBottomNavigation.menu.clear()
+        mBottomNavigation.setOnNavigationItemSelectedListener(this)
+        navigationTitles.forEachIndexed { index, title ->
+            mBottomNavigation.menu.add(0, index, index, title)
+        }
+        mMainPage.adapter = NavigationAdapter(mFragments, supportFragmentManager)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        if (mFragments.size > item.itemId) {
+            mMainPage.setCurrentItem(item.itemId, true)
+            return true
+        }
+        return false
+    }
 }

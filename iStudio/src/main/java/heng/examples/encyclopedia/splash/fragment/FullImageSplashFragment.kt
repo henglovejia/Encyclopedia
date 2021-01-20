@@ -11,7 +11,7 @@ import study.examples.constant.MAIN_PAGE
 import study.examples.constant.SPLASH_PAGE
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/18 6:07 下午
  * @email 932805400@qq.com
  */
@@ -19,7 +19,7 @@ import study.examples.constant.SPLASH_PAGE
 class FullImageSplashFragment : BaseSplash() {
     override fun getSplashType() = FULL_IMAGE_TYPE
 
-    override fun getLayoutId() = R.layout.study_examples_activity_splash
+    override fun getLayoutId() = R.layout.activity_splash_main
 
     override fun afterCreateView(view: View) {
         super.afterCreateView(view)

@@ -6,15 +6,14 @@ import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
 import heng.examples.encyclopedia.splash.fragment.FULL_IMAGE_TYPE
 import heng.examples.encyclopedia.splash.manager.SplashManager
-import study.examples.component.activity.BaseActivity
-import study.examples.component.handler.postDelay
+import study.examples.component.activity.BaseLogActivity
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/19 6:50 下午
  * @email 932805400@qq.com
  */
-class SplashActivity : BaseActivity() {
+class SplashActivity : BaseLogActivity() {
     private var hasJumped = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

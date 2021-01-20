@@ -8,7 +8,7 @@ import android.os.Process.THREAD_PRIORITY_LESS_FAVORABLE
 import androidx.annotation.IntRange
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/19 11:54 上午
  * @email 932805400@qq.com
  */

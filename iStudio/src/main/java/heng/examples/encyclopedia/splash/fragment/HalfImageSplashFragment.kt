@@ -9,14 +9,14 @@ import study.examples.component.view.findViewSafely
 import study.examples.constant.MAIN_PAGE
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/19 7:06 下午
  * @email 932805400@qq.com
  */
 class HalfImageSplashFragment : BaseSplash() {
     override fun getSplashType() = HALF_IMAGE_TYPE
 
-    override fun getLayoutId() = R.layout.study_examples_activity_splash
+    override fun getLayoutId() = R.layout.activity_splash_main
 
     override fun afterCreateView(view: View) {
         super.afterCreateView(view)

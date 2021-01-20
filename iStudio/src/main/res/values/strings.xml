@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">百科全书</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_debug">调试</string>
+    <string name="title_basic">基础</string>
+    <string name="title_advance">进阶</string>
+    <string name="title_mix">混合</string>
+    <string name="title_other">其他</string>
+    <string-array name="navigation_titles">
+        <item>调试</item>
+        <item>基础</item>
+        <item>进阶</item>
+        <item>混合</item>
+    </string-array>
+    <string-array name="navigation_fragments">
+        <item>/debug/main</item>
+        <item>/basic/main</item>
+        <item>/advance/main</item>
+        <item>/mix/main</item>
+    </string-array>
 </resources>

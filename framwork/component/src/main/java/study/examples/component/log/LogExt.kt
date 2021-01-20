@@ -1,9 +1,9 @@
-package study.examples.component.ELog
+package study.examples.component.log
 
 import android.util.Log
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/18 5:54 下午
  * @email 932805400@qq.com
  */

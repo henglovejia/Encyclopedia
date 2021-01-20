@@ -6,7 +6,7 @@ import com.facebook.drawee.backends.pipeline.Fresco
 import study.examples.component.BuildConfig
 
 /**
- * @author zhangheng
+ * @author zhangHeng
  * @since 2021/1/18 3:38 下午
  * @email 932805400@qq.com
  */
