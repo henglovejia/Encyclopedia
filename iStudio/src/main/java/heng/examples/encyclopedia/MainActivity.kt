@@ -5,7 +5,6 @@ import android.view.MenuItem
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import heng.examples.encyclopedia.adapter.NavigationAdapter
 import study.examples.component.activity.BaseLogActivity
 import study.examples.component.log.logE
@@ -23,34 +22,41 @@ class MainActivity : BaseLogActivity(), BottomNavigationView.OnNavigationItemSel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation).apply {
-            labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
-        }
+        mBottomNavigation = findViewById(R.id.bottom_navigation)
         mMainPage = findViewById(R.id.main_pager)
         addNavigationMenus()
     }
 
     private fun addNavigationMenus() {
-        val navigationTitles = resources.getStringArray(R.array.navigation_titles)
-        if (navigationTitles.size != mFragments.size) {
+        val navigationTitleSize = mBottomNavigation.menu.size()
+        if (navigationTitleSize != mFragments.size) {
             ("init navigation menu failure because the number of " +
-                    "title:${navigationTitles.size} and fragment:${mFragments.size} " +
+                    "title:${navigationTitleSize} and fragment:${mFragments.size} " +
                     "is not match").logE(this)
             return
         }
-        mBottomNavigation.menu.clear()
         mBottomNavigation.setOnNavigationItemSelectedListener(this)
-        navigationTitles.forEachIndexed { index, title ->
-            mBottomNavigation.menu.add(0, index, index, title)
-        }
         mMainPage.adapter = NavigationAdapter(mFragments, supportFragmentManager)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        if (mFragments.size > item.itemId) {
-            mMainPage.setCurrentItem(item.itemId, true)
-            return true
+        when (item.itemId) {
+            R.id.navigation_debug -> {
+                mMainPage.setCurrentItem(0, true)
+            }
+            R.id.navigation_basic -> {
+                mMainPage.setCurrentItem(1, true)
+            }
+            R.id.navigation_advance -> {
+                mMainPage.setCurrentItem(2, true)
+            }
+            R.id.navigation_mix -> {
+                mMainPage.setCurrentItem(3, true)
+            }
+            else -> {
+                return false
+            }
         }
-        return false
+        return true
     }
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_debug"
+        android:icon="@mipmap/cell"
+        android:title="@string/title_debug" />
+    <item
+        android:id="@+id/navigation_basic"
+        android:icon="@mipmap/basic"
+        android:title="@string/title_basic" />
+    <item
+        android:id="@+id/navigation_advance"
+        android:icon="@mipmap/advance"
+        android:title="@string/title_advance" />
+    <item
+        android:id="@+id/navigation_mix"
+        android:icon="@mipmap/mix"
+        android:title="@string/title_mix" />
+</menu>
