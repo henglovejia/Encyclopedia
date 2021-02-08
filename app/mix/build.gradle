@@ -46,5 +46,5 @@ dependencies {
     implementation thirdparty.'arouter-api'
     kapt thirdparty.'arouter-compiler'
     implementation project(path: ':framwork:component')
-    implementation project(path: ':framwork:constant')
+    implementation project(path: ':common:constant')
 }

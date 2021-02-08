@@ -1,18 +1,31 @@
 package study.examples.component.fragment
 
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+
 /**
- * @author zhangHeng
- * @since 2021/1/18 5:30 下午
- * @email 932805400@qq.com
+ * @author Alpha
+ * @since 1/29/21
+ * @email zhangheng@bilibili.com
+ * @description
  */
 abstract class BaseListFragment : BaseLogFragment() {
+    lateinit var mRecyclerView: RecyclerView
+
+    override fun afterCreateView(view: View) {
+        super.afterCreateView(view)
+        mRecyclerView = view.findViewById(getRVId())
+    }
+
     /**
      * 获取RecycleView ID
      */
-    abstract fun getRVId()
+    abstract fun getRVId(): Int
+
+
 
     /**
-     * 加载态
+     * 加载中
      */
     abstract fun onLoading()
 
@@ -29,10 +42,10 @@ abstract class BaseListFragment : BaseLogFragment() {
     /**
      * 加载空数据
      */
-    abstract fun onEmpty()
+    fun onEmpty() {}
 
     /**
      * 加载更多
      */
-    abstract fun loadMore()
+    fun loadMore() {}
 }

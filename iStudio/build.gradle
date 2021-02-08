@@ -53,7 +53,9 @@ dependencies {
     implementation thirdparty.'fresco'
 
     implementation project(path: ':framwork:component')
-    implementation project(path: ':framwork:constant')
+    implementation project(path: ':framwork:widget')
+    implementation project(path: ':common:resource')
+    implementation project(path: ':common:constant')
     implementation project(':app:mix')
     implementation project(':app:debug')
     implementation project(':app:advance')

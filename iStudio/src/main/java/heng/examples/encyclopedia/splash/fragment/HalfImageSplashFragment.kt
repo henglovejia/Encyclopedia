@@ -1,12 +1,10 @@
 package heng.examples.encyclopedia.splash.fragment
 
 import android.view.View
-import android.widget.Button
 import heng.examples.encyclopedia.R
 import heng.examples.encyclopedia.splash.SplashActivity
-import study.examples.component.handler.postDelay
-import study.examples.component.view.findViewSafely
-import study.examples.constant.MAIN_PAGE
+import study.examples.constant.main.MAIN_PAGE
+import study.examples.widget.EncyTextView
 
 /**
  * @author zhangHeng
@@ -15,20 +13,30 @@ import study.examples.constant.MAIN_PAGE
  */
 class HalfImageSplashFragment : BaseSplash() {
     override fun getSplashType() = HALF_IMAGE_TYPE
-
+    lateinit var mSkipTV: EncyTextView
     override fun getLayoutId() = R.layout.activity_splash_main
 
     override fun afterCreateView(view: View) {
         super.afterCreateView(view)
-        view.findViewSafely<Button>(R.id.splash_skip)?.setOnClickListener {
-            (activity as? SplashActivity)?.jumpToMainPage(MAIN_PAGE)
+        mSkipTV = view.findViewById<EncyTextView>(R.id.splash_skip).apply {
+            setOnClickListener {
+                stopTimerTask()
+                (activity as? SplashActivity)?.jumpToMainPage(MAIN_PAGE)
+            }
         }
     }
 
     override fun onStart() {
         super.onStart()
-        Runnable {
-            (activity as? SplashActivity)?.jumpToMainPage(MAIN_PAGE)
-        }.postDelay(4000L)
+        startTimerTask()
+    }
+
+    override fun onCountDownTick(millisUntilFinished: Long) {
+        mSkipTV.text =
+            String.format(resources.getString(R.string.skip_splash), millisUntilFinished / 1000 + 1)
+    }
+
+    override fun onCountDownFinish() {
+        (activity as? SplashActivity)?.jumpToMainPage(MAIN_PAGE)
     }
 }

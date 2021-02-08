@@ -2,7 +2,7 @@ package study.examples.basic
 
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.component.fragment.BaseLogFragment
-import study.examples.constant.BASIC_MAIN_PAGE
+import study.examples.constant.basic.BASIC_PAGE
 
 /**
  * @author zhangHeng
@@ -10,7 +10,7 @@ import study.examples.constant.BASIC_MAIN_PAGE
  * @email 932805400@qq.com
  * @actions 基础知识主页面
  */
-@Route(path = BASIC_MAIN_PAGE)
+@Route(path = BASIC_PAGE)
 class MainBasicFragment : BaseLogFragment() {
     override fun getLayoutId() = R.layout.activity_basic_main
 }

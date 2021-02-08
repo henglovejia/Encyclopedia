@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utF-8"?>
+<resources>
+    <!--基础色值-->
+    <color name="white_alpha10">#16FFFFFF</color>
+    <color name="white_alpha15">#26FFFFFF</color>
+    <color name="white_alpha20">#33FFFFFF</color>
+    <color name="white_alpha25">#3CFFFFFF</color>
+    <color name="white_alpha30">#4CFFFFFF</color>
+    <color name="white_alpha35">#5AFFFFFF</color>
+    <color name="white_alpha40">#66FFFFFF</color>
+    <color name="white_alpha50">#88FFFFFF</color>
+    <color name="white_alpha55">#8DFFFFFF</color>
+    <color name="white_alpha60">#99FFFFFF</color>
+    <color name="white_alpha65">#A6FFFFFF</color>
+    <color name="white_alpha70">#B4FFFFFF</color>
+    <color name="white_alpha75">#C0FFFFFF</color>
+    <color name="white_alpha80">#CCFFFFFF</color>
+
+    <color name="black_alpha10">#16000000</color>
+    <color name="black_alpha15">#26000000</color>
+    <color name="black_alpha20">#33000000</color>
+    <color name="black_alpha25">#3C000000</color>
+    <color name="black_alpha30">#4C000000</color>
+    <color name="black_alpha35">#5A000000</color>
+    <color name="black_alpha40">#66000000</color>
+    <color name="black_alpha50">#7F000000</color>
+    <color name="black_alpha55">#8D000000</color>
+    <color name="black_alpha60">#99000000</color>
+    <color name="black_alpha65">#A6000000</color>
+    <color name="black_alpha70">#B4000000</color>
+    <color name="black_alpha75">#C0000000</color>
+    <color name="black_alpha80">#CC000000</color>
+
+    <!--主题色-->
+    <color name="theme_green">#FF04BE02</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+</resources>

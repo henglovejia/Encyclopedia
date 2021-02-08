@@ -8,7 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import heng.examples.encyclopedia.adapter.NavigationAdapter
 import study.examples.component.activity.BaseLogActivity
 import study.examples.component.log.logE
-import study.examples.constant.MAIN_PAGE
+import study.examples.constant.main.MAIN_PAGE
 
 @Route(path = MAIN_PAGE)
 class MainActivity : BaseLogActivity(), BottomNavigationView.OnNavigationItemSelectedListener {

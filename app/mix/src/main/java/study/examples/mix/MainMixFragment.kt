@@ -2,7 +2,7 @@ package study.examples.mix
 
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.component.fragment.BaseLogFragment
-import study.examples.constant.MIX_MAIN_PAGE
+import study.examples.constant.MIX_PAGE
 
 /**
  * @author zhangHeng
@@ -10,7 +10,7 @@ import study.examples.constant.MIX_MAIN_PAGE
  * @email 932805400@qq.com
  * @actions 混合开发主页面
  */
-@Route(path = MIX_MAIN_PAGE)
+@Route(path = MIX_PAGE)
 class MainMixFragment : BaseLogFragment() {
     override fun getLayoutId() = R.layout.activity_mix_main
 }
