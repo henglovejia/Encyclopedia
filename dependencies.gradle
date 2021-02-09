@@ -1,19 +1,19 @@
 ext {
-    minSdkVersion = 23
+    minSdkVersion = 24
     targetSdkVersion = 30
     compileSdkVersion = 30
     buildToolsVersion = "30.0.3"
-    kotlin_version = "1.4.20"
+    kotlin_version = "1.4.30"
 
-    okhttpVersion = "4.9.0"
+    okHttpVersion = "4.9.0"
     aRouterVersion = "1.5.1"
     frescoVersion = "2.3.0"
 }
 
 ext {
-    thirdparty = ['okhttp3'                    : "com.squareup.okhttp3:okhttp:$okhttpVersion",
-                  'okhttp3-logging-interceptor': "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
-                  'okhttp3-mockserver'         : "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+    thirdparty = ['okhttp3'                    : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+                  'okhttp3-logging-interceptor': "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+                  'okhttp3-mockserver'         : "com.squareup.okhttp3:mockwebserver:$okHttpVersion",
                   'arouter-api'                : "com.alibaba:arouter-api:$aRouterVersion",
                   'arouter-compiler'           : "com.alibaba:arouter-compiler:$aRouterVersion",
                   'fresco'                     : "com.facebook.fresco:fresco:$frescoVersion"]
