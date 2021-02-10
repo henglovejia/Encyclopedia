@@ -10,7 +10,7 @@ import android.view.ViewGroup
  * @email zhangheng@bilibili.com
  * @description
  */
-class EmptyItem : BaseCardItem() {}
+class EmptyItem(viewType: Int) : BaseCardItem(viewType) {}
 
 class EmptyCard(itemView: View) : BaseCardVH<EmptyItem>(itemView) {
     companion object {

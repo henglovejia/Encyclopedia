@@ -6,6 +6,6 @@ package study.examples.component.feed
  * @email zhangheng@bilibili.com
  * @description
  */
-abstract class BaseCardItem {
-    open val viewType: Int = 0
+abstract class BaseCardItem(type: Int = 0) {
+    open val viewType: Int = type
 }

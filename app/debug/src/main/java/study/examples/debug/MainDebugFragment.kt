@@ -25,7 +25,7 @@ class MainDebugFragment : BaseListFragmentV2() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mAdapter.cardRepository.addCard(DebugCardV1Item())
+        mAdapter.addCard(DebugCardV1Item())
         mRecyclerView.layoutManager = LinearLayoutManager(this.context)
         mRecyclerView.adapter = mAdapter
         mAdapter.notifyDataSetChanged()

@@ -1,4 +1,4 @@
-package study.examples.debug.feed
+package study.examples.basic.feed
 
 import study.examples.component.feed.BaseCardAdapter
 import study.examples.component.feed.BaseCardItem
@@ -12,7 +12,7 @@ import study.examples.component.fragment.BaseFragment
  * @email zhangheng@bilibili.com
  * @description
  */
-class DebugCardAdapter(
+class BasicCardAdapter(
     private val fragment: BaseFragment,
     private val cardRepository: BaseCardRepository<BaseCardVH<BaseCardItem>, BaseCardItem>
 ) : BaseCardAdapter<BaseCardVH<BaseCardItem>>(fragment, cardRepository) {

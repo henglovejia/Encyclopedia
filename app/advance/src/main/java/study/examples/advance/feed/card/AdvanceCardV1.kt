@@ -1,12 +1,12 @@
-package study.examples.debug.feed.card
+package study.examples.advance.feed.card
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import study.examples.advance.R
 import study.examples.component.feed.BaseCardVH
 import study.examples.component.feed.EmptyCard
-import study.examples.debug.R
-import study.examples.debug.feed.item.DebugCardV1Item
+import study.examples.advance.feed.item.AdvanceCardV1Item
 
 /**
  * @author Alpha
@@ -15,12 +15,12 @@ import study.examples.debug.feed.item.DebugCardV1Item
  * @description
  */
 
-class DebugCardV1(itemView: View) : BaseCardVH<DebugCardV1Item>(itemView) {
+class AdvanceCardV1(itemView: View) : BaseCardVH<AdvanceCardV1Item>(itemView) {
     companion object {
         fun createView(parent: ViewGroup): EmptyCard {
             return EmptyCard(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.debug_list_item_tv, parent, false)
+                    .inflate(R.layout.advance_list_item_tv, parent, false)
             )
         }
     }

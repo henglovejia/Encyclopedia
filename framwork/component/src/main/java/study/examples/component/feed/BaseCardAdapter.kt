@@ -38,4 +38,12 @@ abstract class BaseCardAdapter<VH : BaseCardVH<BaseCardItem>>(
         super.onViewRecycled(holder)
         holder.onRecycled()
     }
+
+    fun addCard(card: BaseCardItem) {
+        cardRepository.addCard(card)
+    }
+
+    fun addCards(cards: MutableList<BaseCardItem>) {
+        cardRepository.addCards(cards)
+    }
 }
