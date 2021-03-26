@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.advance.feed.AdvanceCardAdapter
 import study.examples.advance.feed.AdvanceCardRepository
-import study.examples.advance.feed.card.AdvanceCardV1
 import study.examples.advance.feed.item.AdvanceCardV1Item
 import study.examples.component.fragment.BaseListFragmentV2
-import study.examples.component.fragment.BaseLogFragment
 import study.examples.constant.advance.ADVANCE_PAGE
 
 /**

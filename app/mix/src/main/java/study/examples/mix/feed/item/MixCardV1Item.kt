@@ -4,9 +4,9 @@ import study.examples.component.feed.BaseCardItem
 import study.examples.mix.feed.MIX_CARD_V1
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/7/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 class MixCardV1Item : BaseCardItem() {

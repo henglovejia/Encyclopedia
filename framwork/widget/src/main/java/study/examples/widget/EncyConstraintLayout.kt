@@ -5,9 +5,9 @@ import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 1/29/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 class EncyConstraintLayout @JvmOverloads constructor(

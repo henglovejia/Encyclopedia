@@ -5,15 +5,15 @@ import androidx.recyclerview.widget.RecyclerView
 import study.examples.component.fragment.BaseFragment
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/7/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 abstract class BaseCardVH<T : BaseCardItem>(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     private var fragment: BaseFragment? = null
-    private lateinit var data: T
+    lateinit var data: T
     private var viewType: Int = 0
     abstract fun realBind()
     fun onRecycled() {

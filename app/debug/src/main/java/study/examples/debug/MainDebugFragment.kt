@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
+import study.examples.component.feed.BaseCardItem
 import study.examples.component.fragment.BaseListFragmentV2
 import study.examples.constant.debug.DEBUG_PAGE
+import study.examples.constant.debug.DEBUG_PAGE_V1
 import study.examples.debug.feed.DebugCardAdapter
 import study.examples.debug.feed.DebugCardRepository
 import study.examples.debug.feed.item.DebugCardV1Item
@@ -21,13 +23,17 @@ class MainDebugFragment : BaseListFragmentV2() {
     private val mAdapter = DebugCardAdapter(this, DebugCardRepository())
     override fun getRVId() = R.id.recycle_view
 
-    override fun getLayoutId() = R.layout.activity_debug_main
+    override fun getLayoutId() = R.layout.fragment_debug_main
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mAdapter.addCard(DebugCardV1Item())
+        mAdapter.addCards(getCardList())
         mRecyclerView.layoutManager = LinearLayoutManager(this.context)
         mRecyclerView.adapter = mAdapter
         mAdapter.notifyDataSetChanged()
+    }
+
+    private fun getCardList(): MutableList<BaseCardItem> {
+        return mutableListOf(DebugCardV1Item("测试1", DEBUG_PAGE_V1))
     }
 }

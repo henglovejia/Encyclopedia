@@ -4,9 +4,9 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 1/29/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 abstract class BaseListFragment : BaseLogFragment() {

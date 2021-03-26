@@ -1,14 +1,15 @@
 package study.examples.debug.feed.item
 
+import androidx.annotation.Keep
 import study.examples.component.feed.BaseCardItem
 import study.examples.debug.feed.DEBUG_CARD_V1
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/7/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
-class DebugCardV1Item : BaseCardItem() {
-    override val viewType: Int = DEBUG_CARD_V1
+@Keep
+class DebugCardV1Item(val title: String, val uri: String) : BaseCardItem(DEBUG_CARD_V1) {
 }

@@ -3,23 +3,28 @@ package study.examples.component.feed
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import study.examples.component.fragment.BaseFragment
+import study.examples.component.log.LogImp
+import study.examples.component.log.logD
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/7/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 abstract class BaseCardAdapter<VH : BaseCardVH<BaseCardItem>>(
     private val fragment: BaseFragment,
     private val cardRepository: BaseCardRepository<VH, BaseCardItem>
-) : RecyclerView.Adapter<VH>() {
+) : RecyclerView.Adapter<VH>(), LogImp {
+    override fun getTAG(): String = javaClass.simpleName
 
     override fun getItemCount(): Int {
+        "card item count:${cardRepository.cardItems.size}".logD(this)
         return cardRepository.cardItems.size
     }
 
     override fun getItemViewType(position: Int): Int {
+        "card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}".logD(this)
         return cardRepository.cardItems.getOrNull(position)?.viewType ?: 0
     }
 

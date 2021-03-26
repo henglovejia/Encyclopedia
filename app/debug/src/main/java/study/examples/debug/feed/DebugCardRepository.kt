@@ -5,19 +5,19 @@ import study.examples.component.feed.BaseCardItem
 import study.examples.component.feed.BaseCardRepository
 import study.examples.component.feed.BaseCardVH
 import study.examples.component.feed.EmptyCard
-import study.examples.debug.feed.card.DebugCardV1
+import study.examples.debug.feed.card.DebugCardV1Holder
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/7/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 
-class DebugCardRepository<VH : BaseCardVH<T>, T : BaseCardItem> : BaseCardRepository<VH, T>() {
+class DebugCardRepository<VH : BaseCardVH<ITEM>, ITEM : BaseCardItem> : BaseCardRepository<VH, ITEM>() {
     override fun realCreate(parent: ViewGroup, viewType: Int): VH {
         return when (viewType) {
-            DEBUG_CARD_V1 -> DebugCardV1.createView(parent)
+            DEBUG_CARD_V1 -> DebugCardV1Holder.createView(parent)
             else -> EmptyCard.createView(parent)
         } as VH
     }

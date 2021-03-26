@@ -4,9 +4,9 @@ import android.app.Application
 import android.content.Context
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/9/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 class EncyApplication : BaseApplication() {

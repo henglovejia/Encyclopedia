@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 
 /**
- * @author Alpha
+ * @author ZhangHeng
  * @since 2/7/21
- * @email zhangheng@bilibili.com
+ * @email 932805400@qq.com
  * @description
  */
 class EmptyItem(viewType: Int) : BaseCardItem(viewType) {}
