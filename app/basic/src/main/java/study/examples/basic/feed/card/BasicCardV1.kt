@@ -4,8 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import study.examples.basic.R
-import study.examples.component.feed.BaseCardVH
-import study.examples.component.feed.EmptyCard
 import study.examples.basic.feed.item.BasicCardV1Item
 
 /**
@@ -15,10 +13,10 @@ import study.examples.basic.feed.item.BasicCardV1Item
  * @description
  */
 
-class BasicCardV1(itemView: View) : BaseCardVH<BasicCardV1Item>(itemView) {
+class BasicCardV1(itemView: View) : BaseBasicCard<BasicCardV1Item>(itemView) {
     companion object {
-        fun createView(parent: ViewGroup): EmptyCard {
-            return EmptyCard(
+        fun createView(parent: ViewGroup): BasicCardV1 {
+            return BasicCardV1(
                 LayoutInflater.from(parent.context)
                     .inflate(R.layout.basic_list_item_tv, parent, false)
             )

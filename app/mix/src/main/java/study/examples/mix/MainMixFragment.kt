@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
-import study.examples.component.fragment.BaseListFragmentV2
+import com.examples.feed.fragment.BaseListFragmentV2
 import study.examples.constant.MIX_PAGE
 import study.examples.mix.feed.MixCardAdapter
 import study.examples.mix.feed.MixCardRepository

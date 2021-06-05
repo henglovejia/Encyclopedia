@@ -1,4 +1,4 @@
-package study.examples.component.feed
+package com.examples.feed.item
 
 /**
  * @author ZhangHeng

@@ -1,4 +1,4 @@
-package study.examples.component.fragment
+package com.examples.feed.fragment
 
 /**
  * @author zhangHeng
@@ -6,7 +6,7 @@ package study.examples.component.fragment
  * @email 932805400@qq.com
  * @description 请求本地的列表页
  */
-abstract class BaseListFragmentV2 : BaseListFragment() {
+abstract class BaseListFragmentV2 : com.examples.feed.fragment.BaseListFragment() {
     override fun onLoading() {}
 
     override fun onSuccess() {}

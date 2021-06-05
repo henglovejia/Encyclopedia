@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
-import study.examples.component.feed.BaseCardItem
-import study.examples.component.fragment.BaseListFragmentV2
+import com.examples.feed.fragment.BaseListFragmentV2
 import study.examples.constant.debug.DEBUG_PAGE
 import study.examples.constant.debug.DEBUG_PAGE_V1
 import study.examples.debug.feed.DebugCardAdapter
 import study.examples.debug.feed.DebugCardRepository
+import study.examples.debug.feed.item.BaseDebugItem
 import study.examples.debug.feed.item.DebugCardV1Item
 
 /**
@@ -33,7 +33,7 @@ class MainDebugFragment : BaseListFragmentV2() {
         mAdapter.notifyDataSetChanged()
     }
 
-    private fun getCardList(): MutableList<BaseCardItem> {
+    private fun getCardList(): MutableList<BaseDebugItem> {
         return mutableListOf(DebugCardV1Item("测试1", DEBUG_PAGE_V1))
     }
 }

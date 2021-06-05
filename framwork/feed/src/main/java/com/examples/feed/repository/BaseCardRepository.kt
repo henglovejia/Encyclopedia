@@ -1,6 +1,8 @@
-package study.examples.component.feed
+package com.examples.feed.repository
 
 import android.view.ViewGroup
+import com.examples.feed.holder.BaseCardVH
+import com.examples.feed.item.BaseCardItem
 
 /**
  * @author ZhangHeng

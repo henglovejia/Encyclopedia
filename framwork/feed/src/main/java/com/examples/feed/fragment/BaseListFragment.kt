@@ -1,7 +1,8 @@
-package study.examples.component.fragment
+package com.examples.feed.fragment
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import study.examples.component.fragment.BaseLogFragment
 
 /**
  * @author ZhangHeng
@@ -21,8 +22,6 @@ abstract class BaseListFragment : BaseLogFragment() {
      * 获取RecycleView ID
      */
     abstract fun getRVId(): Int
-
-
 
     /**
      * 加载中

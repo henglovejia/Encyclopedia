@@ -1,7 +1,10 @@
-package study.examples.component.feed
+package com.examples.feed.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.examples.feed.item.BaseCardItem
+import com.examples.feed.repository.BaseCardRepository
+import com.examples.feed.holder.BaseCardVH
 import study.examples.component.fragment.BaseFragment
 import study.examples.component.log.LogImp
 import study.examples.component.log.logD
@@ -12,9 +15,9 @@ import study.examples.component.log.logD
  * @email 932805400@qq.com
  * @description
  */
-abstract class BaseCardAdapter<VH : BaseCardVH<BaseCardItem>>(
+abstract class BaseCardAdapter<VH : BaseCardVH<T>, T : BaseCardItem>(
     private val fragment: BaseFragment,
-    private val cardRepository: BaseCardRepository<VH, BaseCardItem>
+    private val cardRepository: BaseCardRepository<VH, T>
 ) : RecyclerView.Adapter<VH>(), LogImp {
     override fun getTAG(): String = javaClass.simpleName
 
@@ -24,7 +27,9 @@ abstract class BaseCardAdapter<VH : BaseCardVH<BaseCardItem>>(
     }
 
     override fun getItemViewType(position: Int): Int {
-        "card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}".logD(this)
+        "card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}".logD(
+            this
+        )
         return cardRepository.cardItems.getOrNull(position)?.viewType ?: 0
     }
 
@@ -44,11 +49,11 @@ abstract class BaseCardAdapter<VH : BaseCardVH<BaseCardItem>>(
         holder.onRecycled()
     }
 
-    fun addCard(card: BaseCardItem) {
+    fun addCard(card: T) {
         cardRepository.addCard(card)
     }
 
-    fun addCards(cards: MutableList<BaseCardItem>) {
+    fun addCards(cards: MutableList<T>) {
         cardRepository.addCards(cards)
     }
 }

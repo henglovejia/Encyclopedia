@@ -1,11 +1,10 @@
 package study.examples.basic.feed
 
 import android.view.ViewGroup
-import study.examples.component.feed.BaseCardItem
-import study.examples.component.feed.BaseCardRepository
-import study.examples.component.feed.BaseCardVH
-import study.examples.component.feed.EmptyCard
+import com.examples.feed.repository.BaseCardRepository
+import study.examples.basic.feed.card.BaseBasicCard
 import study.examples.basic.feed.card.BasicCardV1
+import study.examples.basic.feed.item.BaseBasicItem
 
 /**
  * @author ZhangHeng
@@ -14,11 +13,11 @@ import study.examples.basic.feed.card.BasicCardV1
  * @description
  */
 
-class BasicCardRepository<VH : BaseCardVH<T>, T : BaseCardItem> : BaseCardRepository<VH, T>() {
+class BasicCardRepository<VH : BaseBasicCard<T>, T : BaseBasicItem> : BaseCardRepository<VH, T>() {
     override fun realCreate(parent: ViewGroup, viewType: Int): VH {
         return when (viewType) {
             BASIC_CARD_V1 -> BasicCardV1.createView(parent)
-            else -> EmptyCard.createView(parent)
+            else -> BasicCardV1.createView(parent)
         } as VH
     }
 }

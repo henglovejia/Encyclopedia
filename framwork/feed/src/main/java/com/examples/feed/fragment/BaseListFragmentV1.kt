@@ -1,4 +1,4 @@
-package study.examples.component.fragment
+package com.examples.feed.fragment
 
 /**
  * @author zhangHeng
@@ -6,5 +6,5 @@ package study.examples.component.fragment
  * @email 932805400@qq.com
  * @description 请求网络的列表页
  */
-abstract class BaseListFragmentV1 : BaseListFragment() {
+abstract class BaseListFragmentV1 : com.examples.feed.fragment.BaseListFragment() {
 }

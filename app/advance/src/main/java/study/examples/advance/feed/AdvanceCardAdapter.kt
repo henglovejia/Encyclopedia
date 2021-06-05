@@ -1,9 +1,11 @@
 package study.examples.advance.feed
 
-import study.examples.component.feed.BaseCardAdapter
-import study.examples.component.feed.BaseCardItem
-import study.examples.component.feed.BaseCardRepository
-import study.examples.component.feed.BaseCardVH
+import com.examples.feed.adapter.BaseCardAdapter
+import com.examples.feed.item.BaseCardItem
+import com.examples.feed.repository.BaseCardRepository
+import com.examples.feed.holder.BaseCardVH
+import study.examples.advance.feed.card.BaseAdvanceCard
+import study.examples.advance.feed.item.BaseAdvanceItem
 import study.examples.component.fragment.BaseFragment
 
 /**
@@ -12,9 +14,9 @@ import study.examples.component.fragment.BaseFragment
  * @email 932805400@qq.com
  * @description
  */
-class AdvanceCardAdapter(
+class AdvanceCardAdapter<VH : BaseAdvanceCard<T>, T : BaseAdvanceItem>(
     private val fragment: BaseFragment,
-    private val cardRepository: BaseCardRepository<BaseCardVH<BaseCardItem>, BaseCardItem>
-) : BaseCardAdapter<BaseCardVH<BaseCardItem>>(fragment, cardRepository) {
+    private val cardRepository: BaseCardRepository<VH, T>
+) : BaseCardAdapter<VH, T>(fragment, cardRepository) {
 
 }

@@ -1,6 +1,6 @@
 package study.examples.basic.feed.item
 
-import study.examples.component.feed.BaseCardItem
+import com.examples.feed.item.BaseCardItem
 import study.examples.basic.feed.BASIC_CARD_V1
 
 /**
@@ -9,6 +9,5 @@ import study.examples.basic.feed.BASIC_CARD_V1
  * @email 932805400@qq.com
  * @description
  */
-class BasicCardV1Item : BaseCardItem() {
-    override val viewType: Int = BASIC_CARD_V1
+class BasicCardV1Item : BaseBasicItem(BASIC_CARD_V1) {
 }

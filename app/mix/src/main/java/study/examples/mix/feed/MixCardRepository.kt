@@ -1,11 +1,10 @@
 package study.examples.mix.feed
 
 import android.view.ViewGroup
-import study.examples.component.feed.BaseCardItem
-import study.examples.component.feed.BaseCardRepository
-import study.examples.component.feed.BaseCardVH
-import study.examples.component.feed.EmptyCard
+import com.examples.feed.repository.BaseCardRepository
+import study.examples.mix.feed.card.BaseMixCard
 import study.examples.mix.feed.card.MixCardV1
+import study.examples.mix.feed.item.BaseMixItem
 
 /**
  * @author ZhangHeng
@@ -14,11 +13,11 @@ import study.examples.mix.feed.card.MixCardV1
  * @description
  */
 
-class MixCardRepository<VH : BaseCardVH<T>, T : BaseCardItem> : BaseCardRepository<VH, T>() {
+class MixCardRepository<VH : BaseMixCard<T>, T : BaseMixItem> : BaseCardRepository<VH, T>() {
     override fun realCreate(parent: ViewGroup, viewType: Int): VH {
         return when (viewType) {
             MIX_CARD_V1 -> MixCardV1.createView(parent)
-            else -> EmptyCard.createView(parent)
+            else -> MixCardV1.createView(parent)
         } as VH
     }
 }

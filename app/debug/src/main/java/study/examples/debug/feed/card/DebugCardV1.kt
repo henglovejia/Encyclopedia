@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.alibaba.android.arouter.launcher.ARouter
-import study.examples.component.feed.BaseCardVH
+import com.examples.feed.holder.BaseCardVH
 import study.examples.debug.R
 import study.examples.debug.feed.item.DebugCardV1Item
 
@@ -16,7 +16,7 @@ import study.examples.debug.feed.item.DebugCardV1Item
  * @description
  */
 
-class DebugCardV1Holder(itemView: View) : BaseCardVH<DebugCardV1Item>(itemView) {
+class DebugCardV1(itemView: View) : BaseDebugCard<DebugCardV1Item>(itemView) {
     private val mText: Button = itemView.findViewById(R.id.text)
 
     init {
@@ -28,8 +28,8 @@ class DebugCardV1Holder(itemView: View) : BaseCardVH<DebugCardV1Item>(itemView) 
     }
 
     companion object {
-        fun createView(parent: ViewGroup): DebugCardV1Holder {
-            return DebugCardV1Holder(
+        fun createView(parent: ViewGroup): DebugCardV1 {
+            return DebugCardV1(
                 LayoutInflater.from(parent.context)
                     .inflate(R.layout.debug_list_item_tv, parent, false)
             )

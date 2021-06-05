@@ -1,7 +1,8 @@
-package study.examples.component.feed
+package com.examples.feed.holder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.examples.feed.item.BaseCardItem
 import study.examples.component.fragment.BaseFragment
 
 /**

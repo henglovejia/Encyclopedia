@@ -1,11 +1,10 @@
 package study.examples.debug.feed
 
 import android.view.ViewGroup
-import study.examples.component.feed.BaseCardItem
-import study.examples.component.feed.BaseCardRepository
-import study.examples.component.feed.BaseCardVH
-import study.examples.component.feed.EmptyCard
-import study.examples.debug.feed.card.DebugCardV1Holder
+import com.examples.feed.repository.BaseCardRepository
+import study.examples.debug.feed.card.BaseDebugCard
+import study.examples.debug.feed.card.DebugCardV1
+import study.examples.debug.feed.item.BaseDebugItem
 
 /**
  * @author ZhangHeng
@@ -14,11 +13,11 @@ import study.examples.debug.feed.card.DebugCardV1Holder
  * @description
  */
 
-class DebugCardRepository<VH : BaseCardVH<ITEM>, ITEM : BaseCardItem> : BaseCardRepository<VH, ITEM>() {
+class DebugCardRepository<VH : BaseDebugCard<T>, T : BaseDebugItem> : BaseCardRepository<VH, T>() {
     override fun realCreate(parent: ViewGroup, viewType: Int): VH {
         return when (viewType) {
-            DEBUG_CARD_V1 -> DebugCardV1Holder.createView(parent)
-            else -> EmptyCard.createView(parent)
+            DEBUG_CARD_V1 -> DebugCardV1.createView(parent)
+            else -> DebugCardV1.createView(parent)
         } as VH
     }
 }

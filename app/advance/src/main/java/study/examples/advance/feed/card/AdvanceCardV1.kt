@@ -4,8 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import study.examples.advance.R
-import study.examples.component.feed.BaseCardVH
-import study.examples.component.feed.EmptyCard
 import study.examples.advance.feed.item.AdvanceCardV1Item
 
 /**
@@ -15,10 +13,10 @@ import study.examples.advance.feed.item.AdvanceCardV1Item
  * @description
  */
 
-class AdvanceCardV1(itemView: View) : BaseCardVH<AdvanceCardV1Item>(itemView) {
+class AdvanceCardV1(itemView: View) : BaseAdvanceCard<AdvanceCardV1Item>(itemView) {
     companion object {
-        fun createView(parent: ViewGroup): EmptyCard {
-            return EmptyCard(
+        fun createView(parent: ViewGroup): AdvanceCardV1 {
+            return AdvanceCardV1(
                 LayoutInflater.from(parent.context)
                     .inflate(R.layout.advance_list_item_tv, parent, false)
             )

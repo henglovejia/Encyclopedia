@@ -7,7 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.basic.feed.BasicCardAdapter
 import study.examples.basic.feed.BasicCardRepository
 import study.examples.basic.feed.item.BasicCardV1Item
-import study.examples.component.fragment.BaseListFragmentV2
+import com.examples.feed.fragment.BaseListFragmentV2
 import study.examples.constant.basic.BASIC_PAGE
 
 /**
@@ -17,7 +17,7 @@ import study.examples.constant.basic.BASIC_PAGE
  * @actions 基础知识主页面
  */
 @Route(path = BASIC_PAGE)
-class MainBasicFragment : BaseListFragmentV2() {
+class MainBasicFragment : com.examples.feed.fragment.BaseListFragmentV2() {
     private val mAdapter = BasicCardAdapter(this, BasicCardRepository())
     override fun getRVId() = R.id.recycle_view
     override fun getLayoutId() = R.layout.activity_basic_main
