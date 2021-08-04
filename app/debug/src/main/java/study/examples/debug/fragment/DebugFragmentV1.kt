@@ -12,8 +12,13 @@ import study.examples.debug.R
  * @description
  */
 @Route(path = DEBUG_PAGE_V1)
-class DebugFragmentV1 : com.examples.feed.fragment.BaseListFragmentV2() {
+class DebugFragmentV1 : BaseListFragmentV2() {
     override fun getRVId() = R.id.recycle_view
+    override fun tryPullUp() {
+    }
+
+    override fun tryPullDown() {
+    }
 
     override fun getLayoutId() = R.layout.fragment_debug_v1
 }

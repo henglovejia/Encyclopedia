@@ -1,10 +1,9 @@
 package study.examples.basic.feed.card
 
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
 import study.examples.basic.R
-import study.examples.basic.feed.item.BasicCardV1Item
+import study.examples.basic.model.card.BasicCardV1Item
 
 /**
  * @author ZhangHeng
@@ -14,15 +13,8 @@ import study.examples.basic.feed.item.BasicCardV1Item
  */
 
 class BasicCardV1(itemView: View) : BaseBasicCard<BasicCardV1Item>(itemView) {
-    companion object {
-        fun createView(parent: ViewGroup): BasicCardV1 {
-            return BasicCardV1(
-                LayoutInflater.from(parent.context)
-                    .inflate(R.layout.basic_list_item_tv, parent, false)
-            )
-        }
-    }
-
+    private val mTitle: Button = itemView.findViewById(R.id.title)
     override fun realBind() {
+        mTitle.text = data.title
     }
 }

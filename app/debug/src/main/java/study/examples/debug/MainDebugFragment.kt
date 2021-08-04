@@ -22,6 +22,11 @@ import study.examples.debug.feed.item.DebugCardV1Item
 class MainDebugFragment : BaseListFragmentV2() {
     private val mAdapter = DebugCardAdapter(this, DebugCardRepository())
     override fun getRVId() = R.id.recycle_view
+    override fun tryPullUp() {
+    }
+
+    override fun tryPullDown() {
+    }
 
     override fun getLayoutId() = R.layout.fragment_debug_main
 

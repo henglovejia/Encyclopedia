@@ -6,16 +6,24 @@ ext {
     kotlin_version = "1.4.30"
 
     okHttpVersion = "4.9.0"
+    retrofitVersion = "2.9.0"
     aRouterVersion = "1.5.1"
     frescoVersion = "2.3.0"
+    rxAndroidVersion = "1.2.1"
+    fastjsonVersion = "1.2.76"
 }
 
 ext {
     thirdparty = ['okhttp3'                    : "com.squareup.okhttp3:okhttp:$okHttpVersion",
                   'okhttp3-logging-interceptor': "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
                   'okhttp3-mockserver'         : "com.squareup.okhttp3:mockwebserver:$okHttpVersion",
+                  'retrofit'                   : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+                  'retrofit-rxjava'            : "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
+                  'retrofit-gson'              : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
                   'arouter-api'                : "com.alibaba:arouter-api:$aRouterVersion",
                   'arouter-compiler'           : "com.alibaba:arouter-compiler:$aRouterVersion",
+                  'rxandroid'                  : "io.reactivex:rxandroid:$rxAndroidVersion",
+                  'fastjson'                   : "com.alibaba:fastjson:$fastjsonVersion",
                   'fresco'                     : "com.facebook.fresco:fresco:$frescoVersion"]
 
     androidx = ['constraintlayout'   : "androidx.constraintlayout:constraintlayout:2.0.4",

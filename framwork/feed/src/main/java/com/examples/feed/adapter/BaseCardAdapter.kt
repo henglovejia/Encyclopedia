@@ -49,11 +49,11 @@ abstract class BaseCardAdapter<VH : BaseCardVH<T>, T : BaseCardItem>(
         holder.onRecycled()
     }
 
-    fun addCard(card: T) {
+    open fun addCard(card: T) {
         cardRepository.addCard(card)
     }
 
-    fun addCards(cards: MutableList<T>) {
+    open fun addCards(cards: MutableList<T>) {
         cardRepository.addCards(cards)
     }
 }

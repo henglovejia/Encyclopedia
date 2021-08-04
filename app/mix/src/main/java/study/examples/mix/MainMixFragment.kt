@@ -20,6 +20,12 @@ import study.examples.mix.feed.item.MixCardV1Item
 class MainMixFragment : BaseListFragmentV2() {
     private val mAdapter = MixCardAdapter(this, MixCardRepository())
     override fun getRVId() = R.id.recycle_view
+    override fun tryPullUp() {
+    }
+
+    override fun tryPullDown() {
+    }
+
     override fun getLayoutId() = R.layout.activity_mix_main
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,0 +1,16 @@
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "cards": [
+      {
+        "card_type": "basic_card_v1",
+        "title": "view1"
+      },
+      {
+        "card_type": "basic_card_v1",
+        "title": "view2"
+      }
+    ]
+  }
+}

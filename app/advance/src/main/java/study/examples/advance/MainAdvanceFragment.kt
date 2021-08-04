@@ -17,9 +17,16 @@ import study.examples.constant.advance.ADVANCE_PAGE
  * @actions 进阶知识主页面
  */
 @Route(path = ADVANCE_PAGE)
-class MainAdvanceFragment : com.examples.feed.fragment.BaseListFragmentV2() {
+class MainAdvanceFragment : BaseListFragmentV2() {
     private val mAdapter = AdvanceCardAdapter(this, AdvanceCardRepository())
     override fun getRVId() = R.id.recycle_view
+    override fun tryPullUp() {
+
+    }
+
+    override fun tryPullDown() {
+    }
+
     override fun getLayoutId() = R.layout.activity_advance_main
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

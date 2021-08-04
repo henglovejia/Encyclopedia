@@ -1,11 +1,9 @@
 package study.examples.basic.feed
 
 import com.examples.feed.adapter.BaseCardAdapter
-import com.examples.feed.item.BaseCardItem
 import com.examples.feed.repository.BaseCardRepository
-import com.examples.feed.holder.BaseCardVH
 import study.examples.basic.feed.card.BaseBasicCard
-import study.examples.basic.feed.item.BaseBasicItem
+import study.examples.basic.model.card.BaseBasicItem
 import study.examples.component.fragment.BaseFragment
 
 /**
@@ -16,6 +14,8 @@ import study.examples.component.fragment.BaseFragment
  */
 class BasicCardAdapter<VH : BaseBasicCard<T>, T : BaseBasicItem>(
     private val fragment: BaseFragment,
-    private val cardRepository: BaseCardRepository<VH, T>
+    private val cardRepository: BaseCardRepository<VH, T>,
+    private val feedData: MutableList<BaseBasicItem>
 ) : BaseCardAdapter<VH, T>(fragment, cardRepository) {
+
 }

@@ -11,8 +11,7 @@ import study.examples.component.fragment.BaseFragment
  * @email 932805400@qq.com
  * @description
  */
-abstract class BaseCardVH<T : BaseCardItem>(itemView: View) :
-    RecyclerView.ViewHolder(itemView) {
+abstract class BaseCardVH<T : BaseCardItem>(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var fragment: BaseFragment? = null
     lateinit var data: T
     private var viewType: Int = 0

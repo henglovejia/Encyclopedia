@@ -24,6 +24,16 @@ abstract class BaseListFragment : BaseLogFragment() {
     abstract fun getRVId(): Int
 
     /**
+     * 上拉加载
+     */
+    abstract fun tryPullUp()
+
+    /**
+     * 下拉加载
+     */
+    abstract fun tryPullDown()
+
+    /**
      * 加载中
      */
     abstract fun onLoading()
@@ -42,9 +52,4 @@ abstract class BaseListFragment : BaseLogFragment() {
      * 加载空数据
      */
     fun onEmpty() {}
-
-    /**
-     * 加载更多
-     */
-    fun loadMore() {}
 }

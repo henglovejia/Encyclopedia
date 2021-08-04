@@ -10,5 +10,5 @@ import study.examples.debug.feed.DEBUG_CARD_V1
  * @description
  */
 @Keep
-class DebugCardV1Item(val title: String, val uri: String) : BaseDebugItem(DEBUG_CARD_V1) {
+class DebugCardV1Item(val title: String, val uri: String) : BaseDebugItem() {
 }

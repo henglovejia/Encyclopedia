@@ -6,5 +6,6 @@ package com.examples.feed.fragment
  * @email 932805400@qq.com
  * @description 请求网络的列表页
  */
-abstract class BaseListFragmentV1 : com.examples.feed.fragment.BaseListFragment() {
+abstract class BaseListFragmentV1 : BaseListFragment() {
+
 }
