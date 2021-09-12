@@ -14,8 +14,7 @@ import study.examples.component.fragment.BaseFragment
  */
 class BasicCardAdapter<VH : BaseBasicCard<T>, T : BaseBasicItem>(
     private val fragment: BaseFragment,
-    private val cardRepository: BaseCardRepository<VH, T>,
-    private val feedData: MutableList<BaseBasicItem>
+    private val cardRepository: BaseCardRepository<VH, T>
 ) : BaseCardAdapter<VH, T>(fragment, cardRepository) {
 
 }

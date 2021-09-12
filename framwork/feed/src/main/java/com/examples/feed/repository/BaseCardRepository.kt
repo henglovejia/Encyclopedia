@@ -24,4 +24,12 @@ abstract class BaseCardRepository<VH : BaseCardVH<T>, T : BaseCardItem> {
     fun addCards(cards: MutableList<T>) {
         cardItems.addAll(cards)
     }
+
+    fun delCard(index: Int) {
+        cardItems.removeAt(index)
+    }
+
+    fun delCards() {
+        cardItems.clear()
+    }
 }

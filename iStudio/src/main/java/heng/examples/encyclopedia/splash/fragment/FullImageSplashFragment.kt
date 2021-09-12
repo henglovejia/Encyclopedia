@@ -20,7 +20,6 @@ class FullImageSplashFragment : BaseSplash() {
     override fun getLayoutId() = R.layout.activity_splash_main
 
     override fun afterCreateView(view: View) {
-        super.afterCreateView(view)
         mSkipTV = view.findViewById<EncyTextView>(R.id.splash_skip).apply {
             setOnClickListener { (activity as? SplashActivity)?.jumpToMainPage(MAIN_PAGE) }
         }

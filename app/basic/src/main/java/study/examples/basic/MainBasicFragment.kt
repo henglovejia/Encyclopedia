@@ -10,7 +10,7 @@ import study.examples.basic.feed.BasicCardAdapter
 import study.examples.basic.feed.BasicCardRepository
 import study.examples.basic.manager.BasicApiManager
 import study.examples.basic.model.BasicIndexResponse
-import study.examples.basic.model.card.BaseBasicItem
+import study.examples.component.log.logE
 import study.examples.constant.basic.BASIC_PAGE
 
 /**
@@ -21,25 +21,11 @@ import study.examples.constant.basic.BASIC_PAGE
  */
 @Route(path = BASIC_PAGE)
 class MainBasicFragment : BaseListFragmentV1() {
-    private val mFeedData = mutableListOf<BaseBasicItem>()
-    private val mAdapter = BasicCardAdapter(this, BasicCardRepository(), mFeedData)
+    private val mAdapter = BasicCardAdapter(this, BasicCardRepository())
     override fun getRVId() = R.id.recycle_view
-
-    override fun tryPullUp() {
-        load(false)
-    }
 
     override fun tryPullDown() {
         load()
-    }
-
-    override fun onLoading() {
-    }
-
-    override fun onSuccess() {
-    }
-
-    override fun onError() {
     }
 
     private fun load(isPullDown: Boolean = true) {
@@ -48,12 +34,13 @@ class MainBasicFragment : BaseListFragmentV1() {
             }
 
             override fun onError(e: Throwable?) {
+                e.toString().logE(this@MainBasicFragment)
             }
 
             override fun onNext(response: BasicIndexResponse) {
-                var startIndex = mFeedData.size
+                var startIndex = mAdapter.getItems().size
                 if (isPullDown) {
-                    mFeedData.clear()
+                    mAdapter.delCards()
                     startIndex = 0
                 }
                 response.cards.let {
@@ -61,7 +48,7 @@ class MainBasicFragment : BaseListFragmentV1() {
                 }
                 mAdapter.notifyItemInserted(startIndex)
             }
-        })
+        }, resources.assets)
     }
 
     override fun getLayoutId() = R.layout.activity_basic_main

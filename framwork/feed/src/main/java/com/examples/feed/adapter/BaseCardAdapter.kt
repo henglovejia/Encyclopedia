@@ -27,9 +27,7 @@ abstract class BaseCardAdapter<VH : BaseCardVH<T>, T : BaseCardItem>(
     }
 
     override fun getItemViewType(position: Int): Int {
-        "card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}".logD(
-            this
-        )
+        "card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}".logD(this)
         return cardRepository.cardItems.getOrNull(position)?.viewType ?: 0
     }
 
@@ -56,4 +54,10 @@ abstract class BaseCardAdapter<VH : BaseCardVH<T>, T : BaseCardItem>(
     open fun addCards(cards: MutableList<T>) {
         cardRepository.addCards(cards)
     }
+
+    open fun delCards() {
+        cardRepository.delCards()
+    }
+
+    open fun getItems() = cardRepository.cardItems
 }

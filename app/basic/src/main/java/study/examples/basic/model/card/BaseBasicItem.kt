@@ -8,4 +8,6 @@ abstract class BaseBasicItem : BaseCardItem() {
     var cardType: String? = null
     @field:JSONField(name = "title")
     var title: String? = null
+    @field:JSONField(name = "uri")
+    var uri: String? = null
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我是一句话" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/Re6"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="3"
+        android:text="带阴影的文字"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/basic_text_view_shape_1"
+        android:text="圆角边框" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/basic_text_view_shape_2"
+        android:text="渐变色边框" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/basic_text_view_shape_3"
+        android:text="圆形边框" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="phone"
+        android:text="16621383521" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="email"
+        android:text="932805400@qq.com" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:text="https://www.baidu.com" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/basic_text_view_9"
+        android:text="点9图" />
+
+    <TextView
+        android:id="@+id/basic_text_drawable"
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/basic_text_view_start"
+        android:drawableTop="@drawable/basic_text_view_start"
+        android:drawableEnd="@drawable/basic_text_view_start"
+        android:drawableBottom="@drawable/basic_text_view_start"
+        android:drawableTint="@color/Re8"
+        android:text="带图" />
+
+    <TextView
+        style="@style/basic_text_view_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/basic_text_view_start"
+        android:drawableEnd="@drawable/basic_text_view_start"
+        android:drawableBottom="@drawable/basic_text_view_start"
+        android:drawableTint="@color/Re8"
+        android:text="带图"
+        app:drawableTopCompat="@drawable/ic_pr_enter" />
+</LinearLayout>

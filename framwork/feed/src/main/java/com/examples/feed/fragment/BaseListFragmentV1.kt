@@ -7,5 +7,9 @@ package com.examples.feed.fragment
  * @description 请求网络的列表页
  */
 abstract class BaseListFragmentV1 : BaseListFragment() {
-
+    override fun tryPullUp() {}
+    override fun onLoading() {}
+    override fun onSuccess() {}
+    override fun onError() {}
+    override fun onEmpty() {}
 }

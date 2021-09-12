@@ -32,5 +32,5 @@ abstract class BaseFragment : Fragment() {
 
     open fun beforeCreateView() {}
     abstract fun getLayoutId(): Int
-    open fun afterCreateView(view: View) {}
+    abstract fun afterCreateView(view: View)
 }

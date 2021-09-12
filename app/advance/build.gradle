@@ -11,8 +11,9 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
         javaCompileOptions {
@@ -43,6 +44,7 @@ dependencies {
     implementation androidx.appcompat
     implementation androidx.material
     implementation androidx.constraintlayout
+    implementation androidx.viewmodel
     implementation thirdparty.'arouter-api'
     implementation project(path: ':framwork:feed')
     kapt thirdparty.'arouter-compiler'

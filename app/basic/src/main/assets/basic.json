@@ -1,0 +1,23 @@
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "cards": [
+      {
+        "card_type": "basic_card_v1",
+        "title": "TextView",
+        "uri": "/basic/view/textview"
+      },
+      {
+        "card_type": "basic_card_v1",
+        "title": "Button",
+        "uri": ""
+      },
+      {
+        "card_type": "basic_card_v1",
+        "title": "ViewModel",
+        "uri": "/basic/view/view_model"
+      }
+    ]
+  }
+}

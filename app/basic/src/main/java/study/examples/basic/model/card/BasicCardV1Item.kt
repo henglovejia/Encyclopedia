@@ -1,6 +1,6 @@
 package study.examples.basic.model.card
 
-import study.examples.basic.feed.BasicCardType
+import com.alibaba.fastjson.annotation.JSONField
 
 /**
  * @author ZhangHeng
@@ -9,4 +9,11 @@ import study.examples.basic.feed.BasicCardType
  * @description
  */
 class BasicCardV1Item : BaseBasicItem() {
+    @field:JSONField(name = "childs")
+    var children: List<BasicCardV1ChildItem>? = null
+
+    val childCount: Int
+        get() = children?.size ?: 0
+
+    inner class BasicCardV1ChildItem : BaseBasicItem()
 }

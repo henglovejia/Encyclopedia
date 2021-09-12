@@ -14,7 +14,6 @@ abstract class BaseListFragment : BaseLogFragment() {
     lateinit var mRecyclerView: RecyclerView
 
     override fun afterCreateView(view: View) {
-        super.afterCreateView(view)
         mRecyclerView = view.findViewById(getRVId())
     }
 
@@ -51,5 +50,5 @@ abstract class BaseListFragment : BaseLogFragment() {
     /**
      * 加载空数据
      */
-    fun onEmpty() {}
+    open fun onEmpty() {}
 }

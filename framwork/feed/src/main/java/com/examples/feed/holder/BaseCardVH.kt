@@ -12,7 +12,7 @@ import study.examples.component.fragment.BaseFragment
  * @description
  */
 abstract class BaseCardVH<T : BaseCardItem>(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private var fragment: BaseFragment? = null
+    protected var fragment: BaseFragment? = null
     lateinit var data: T
     private var viewType: Int = 0
     abstract fun realBind()
