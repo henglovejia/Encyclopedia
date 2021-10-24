@@ -1,9 +1,9 @@
 package com.examples.feed.holder
 
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.examples.feed.item.BaseCardItem
-import study.examples.component.fragment.BaseFragment
 
 /**
  * @author ZhangHeng
@@ -12,17 +12,18 @@ import study.examples.component.fragment.BaseFragment
  * @description
  */
 abstract class BaseCardVH<T : BaseCardItem>(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    protected var fragment: BaseFragment? = null
-    lateinit var data: T
+    protected var fragment: Fragment? = null
+    protected lateinit var data: T
+    protected abstract fun bindView()
     private var viewType: Int = 0
-    abstract fun realBind()
     fun onRecycled() {
         fragment = null
     }
 
-    fun bindData(fragment: BaseFragment, data: T) {
+    fun bindData(fragment: Fragment, data: T) {
         this.fragment = fragment
         this.data = data
         viewType = data.viewType
+        bindView()
     }
 }

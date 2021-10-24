@@ -12,15 +12,17 @@ import study.examples.basic.model.BasicIndexResponse
 import study.examples.basic.service.BasicApiService
 import study.examples.component.log.LogImp
 import study.examples.component.log.logD
-import study.examples.component.log.logE
 import study.examples.network.NetworkManager
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
+class BasicApiManager : LogImp {
+    private val apiService by lazy {
+        NetworkManager.createService(BasicApiService::class.java)
+    }
 
-object BasicApiManager : LogImp {
     fun getIndex(subscriber: Subscriber<BasicIndexResponse>, assetManager: AssetManager?) {
-        NetworkManager.createService(BasicApiService::class.java).index()
+        apiService.index()
             .subscribeOn(Schedulers.io())
             .map {
                 BasicIndexResponse().parseItems(it?.toString())
@@ -61,5 +63,4 @@ object BasicApiManager : LogImp {
     }
 
     override fun getTAG() = "BasicApiManager"
-
 }

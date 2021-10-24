@@ -22,6 +22,7 @@ import study.examples.constant.basic.BASIC_PAGE
 @Route(path = BASIC_PAGE)
 class MainBasicFragment : BaseListFragmentV1() {
     private val mAdapter = BasicCardAdapter(this, BasicCardRepository())
+    private val mApiManager = BasicApiManager()
     override fun getRVId() = R.id.recycle_view
 
     override fun tryPullDown() {
@@ -29,7 +30,7 @@ class MainBasicFragment : BaseListFragmentV1() {
     }
 
     private fun load(isPullDown: Boolean = true) {
-        BasicApiManager.getIndex(object : Subscriber<BasicIndexResponse>() {
+        mApiManager.getIndex(object : Subscriber<BasicIndexResponse>() {
             override fun onCompleted() {
             }
 

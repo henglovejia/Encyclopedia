@@ -1,4 +1,4 @@
-package study.examples.advance.feed.item
+package study.examples.advance.model.item
 
 /**
  * @author ZhangHeng

@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.alibaba.android.arouter.launcher.ARouter
-import com.examples.feed.holder.BaseCardVH
 import study.examples.debug.R
 import study.examples.debug.feed.item.DebugCardV1Item
 
@@ -36,7 +35,7 @@ class DebugCardV1(itemView: View) : BaseDebugCard<DebugCardV1Item>(itemView) {
         }
     }
 
-    override fun realBind() {
+    override fun bindView() {
         mText.text = data.title
     }
 }

@@ -22,7 +22,7 @@ class BasicCardV1(itemView: View) : BaseBasicCard<BasicCardV1Item>(itemView) {
         }
     }
 
-    override fun realBind() {
+    override fun bindView() {
         mTitle.text = data.title
     }
 }

@@ -36,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -45,10 +48,21 @@ dependencies {
     implementation androidx.material
     implementation androidx.constraintlayout
     implementation androidx.viewmodel
+    implementation androidx.'fragment-ktx'
     implementation thirdparty.'arouter-api'
     implementation project(path: ':framwork:feed')
-    kapt thirdparty.'arouter-compiler'
     implementation project(path: ':framwork:component')
     implementation project(path: ':framwork:widget')
     implementation project(path: ':common:constant')
+    implementation project(path: ':framwork:network')
+
+    kapt thirdparty.'arouter-compiler'
+    implementation thirdparty.fastjson
+    implementation thirdparty.retrofit
+    implementation thirdparty.'retrofit-gson'
+
+    implementation androidx.'paging-runtime'
+    implementation androidx.'paging-common'
+    implementation androidx.'paging-rxjava3'
+    implementation androidx.'paging-compose'
 }

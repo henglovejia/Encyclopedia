@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import com.examples.feed.repository.BaseCardRepository
 import study.examples.advance.feed.card.AdvanceCardV1
 import study.examples.advance.feed.card.BaseAdvanceCard
-import study.examples.advance.feed.item.BaseAdvanceItem
+import study.examples.advance.model.item.BaseAdvanceItem
 
 /**
  * @author ZhangHeng

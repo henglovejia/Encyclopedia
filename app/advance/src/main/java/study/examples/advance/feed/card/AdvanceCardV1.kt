@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import study.examples.advance.R
-import study.examples.advance.feed.item.AdvanceCardV1Item
+import study.examples.advance.model.item.AdvanceCardV1Item
 
 /**
  * @author ZhangHeng
@@ -23,6 +23,6 @@ class AdvanceCardV1(itemView: View) : BaseAdvanceCard<AdvanceCardV1Item>(itemVie
         }
     }
 
-    override fun realBind() {
+    override fun bindView() {
     }
 }

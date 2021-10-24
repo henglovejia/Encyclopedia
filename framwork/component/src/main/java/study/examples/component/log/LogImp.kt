@@ -6,5 +6,5 @@ package study.examples.component.log
  * @email 932805400@qq.com
  */
 interface LogImp {
-    fun getTAG(): String
+    fun getTAG(): String = javaClass.simpleName
 }

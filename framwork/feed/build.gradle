@@ -38,5 +38,10 @@ dependencies {
     implementation androidx.appcompat
     implementation androidx.material
 
+    implementation androidx.'paging-runtime'
+    implementation androidx.'paging-common'
+    implementation androidx.'paging-rxjava3'
+    implementation androidx.'paging-compose'
+
     implementation project(path: ':framwork:component')
 }

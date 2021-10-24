@@ -1,13 +1,17 @@
 package study.examples.advance
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.advance.feed.AdvanceCardAdapter
-import study.examples.advance.feed.AdvanceCardRepository
-import study.examples.advance.feed.item.AdvanceCardV1Item
-import com.examples.feed.fragment.BaseListFragmentV2
+import com.examples.feed.fragment.BasePaging3Fragment
+import kotlinx.coroutines.launch
+import study.examples.advance.databinding.ActivityAdvanceMainBinding
+import study.examples.advance.lifecycle.AdvanceViewModel
 import study.examples.constant.advance.ADVANCE_PAGE
 
 /**
@@ -17,23 +21,19 @@ import study.examples.constant.advance.ADVANCE_PAGE
  * @actions 进阶知识主页面
  */
 @Route(path = ADVANCE_PAGE)
-class MainAdvanceFragment : BaseListFragmentV2() {
-    private val mAdapter = AdvanceCardAdapter(this, AdvanceCardRepository())
-    override fun getRVId() = R.id.recycle_view
-    override fun tryPullUp() {
-
-    }
-
-    override fun tryPullDown() {
-    }
-
-    override fun getLayoutId() = R.layout.activity_advance_main
+class MainAdvanceFragment : BasePaging3Fragment<ActivityAdvanceMainBinding, AdvanceCardAdapter>() {
+    private val mViewModel by viewModels<AdvanceViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mAdapter.addCard(AdvanceCardV1Item())
-        mRecyclerView.layoutManager = LinearLayoutManager(this.context)
-        mRecyclerView.adapter = mAdapter
-        mAdapter.notifyDataSetChanged()
+        mAdapter = AdvanceCardAdapter(this)
+        binding.recycleView.adapter = mAdapter
+        lifecycleScope.launch {
+//            mViewModel.loadStateFlow.collectLatest { pagingData ->
+//                pagingAdapter.submitData(pagingData)
+//            }
+        }
     }
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) = ActivityAdvanceMainBinding.inflate(inflater, container, false)
 }

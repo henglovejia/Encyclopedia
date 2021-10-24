@@ -38,7 +38,6 @@ abstract class BaseCardAdapter<VH : BaseCardVH<T>, T : BaseCardItem>(
     override fun onBindViewHolder(holder: VH, position: Int) {
         cardRepository.cardItems.getOrNull(position)?.run {
             holder.bindData(fragment, this)
-            holder.realBind()
         }
     }
 

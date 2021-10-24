@@ -23,6 +23,6 @@ class MixCardV1(itemView: View) : BaseMixCard<MixCardV1Item>(itemView) {
         }
     }
 
-    override fun realBind() {
+    override fun bindView() {
     }
 }
