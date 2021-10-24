@@ -35,7 +35,7 @@ class MainBasicFragment : BaseListFragmentV1() {
             }
 
             override fun onError(e: Throwable?) {
-                e.toString().logE(this@MainBasicFragment)
+                logE(e.toString())
             }
 
             override fun onNext(response: BasicIndexResponse) {

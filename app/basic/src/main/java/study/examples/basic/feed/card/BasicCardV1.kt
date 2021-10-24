@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.Button
 import study.examples.basic.R
 import study.examples.basic.model.card.BasicCardV1Item
-import study.examples.router.RouterManager
+import study.examples.router.RouterManager.routerTo
 
 /**
  * @author ZhangHeng
@@ -18,7 +18,7 @@ class BasicCardV1(itemView: View) : BaseBasicCard<BasicCardV1Item>(itemView) {
 
     init {
         mTitle.setOnClickListener {
-            RouterManager.routerTo(data.uri, fragment?.activity)
+            fragment?.activity?.routerTo(data.uri)
         }
     }
 

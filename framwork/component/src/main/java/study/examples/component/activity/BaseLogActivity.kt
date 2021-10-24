@@ -15,36 +15,36 @@ abstract class BaseLogActivity : BaseActivity(), LogImp {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        "Activity onCreate".logD(this)
+        logD("Activity onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        "Activity onStart".logD(this)
+        logD("Activity onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        "Activity onResume".logD(this)
+        logD("Activity onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        "Activity onPause".logD(this)
+        logD("Activity onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        "Activity onStop".logD(this)
+        logD("Activity onStop")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        "Activity onDestroy".logD(this)
+        logD("Activity onDestroy")
     }
 
     override fun onRestart() {
         super.onRestart()
-        "Activity onRestart".logD(this)
+        logD("Activity onRestart")
     }
 }

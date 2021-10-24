@@ -12,11 +12,11 @@ import study.examples.constant.common.CONTAINER_PAGE
 import study.examples.constant.common.KEY_FRAGMENT_CONTAINER
 
 object RouterManager : LogImp {
-    fun routerTo(uri: String?, context: Activity? = null, requestCode: Int = 0) {
+    fun Activity.routerTo(uri: String?, requestCode: Int = 0) {
         uri ?: return
-        ARouter.getInstance().build(uri).navigation(context, requestCode, object : NavigationCallback {
+        ARouter.getInstance().build(uri).navigation(this, requestCode, object : NavigationCallback {
             override fun onFound(postcard: Postcard?) {
-                "onFound".logD(this@RouterManager)
+                logD("onFound")
                 postcard?.run {
                     if (type == RouteType.FRAGMENT) {
                         ARouter.getInstance().build(CONTAINER_PAGE).with(Bundle().apply {
@@ -27,15 +27,15 @@ object RouterManager : LogImp {
             }
 
             override fun onLost(postcard: Postcard?) {
-                "onLost".logD(this@RouterManager)
+                logD("onLost")
             }
 
             override fun onArrival(postcard: Postcard?) {
-                "onArrival".logD(this@RouterManager)
+                logD("onArrival")
             }
 
             override fun onInterrupt(postcard: Postcard?) {
-                "onInterrupt".logD(this@RouterManager)
+                logD("onInterrupt")
             }
         })
     }

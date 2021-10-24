@@ -37,9 +37,11 @@ class MainActivity : BaseLogActivity(), BottomNavigationView.OnNavigationItemSel
     private fun addNavigationMenus() {
         val navigationTitleSize = mBottomNavigation.menu.size()
         if (navigationTitleSize != mFragments.size) {
-            ("init navigation menu failure because the number of " +
+            logE(
+                "init navigation menu failure because the number of " +
                     "title:${navigationTitleSize} and fragment:${mFragments.size} " +
-                    "is not match").logE(this)
+                    "is not match"
+            )
             return
         }
         mBottomNavigation.setOnNavigationItemSelectedListener(this)

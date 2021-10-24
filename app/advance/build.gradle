@@ -55,6 +55,7 @@ dependencies {
     implementation project(path: ':framwork:widget')
     implementation project(path: ':common:constant')
     implementation project(path: ':framwork:network')
+    implementation project(path: ':common:router')
 
     kapt thirdparty.'arouter-compiler'
     implementation thirdparty.fastjson

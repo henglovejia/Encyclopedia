@@ -19,12 +19,12 @@ abstract class BaseLogFragment : BaseFragment(), LogImp {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        "Fragment onAttach".logD(this)
+        logD("Fragment onAttach")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        "Fragment onCreate".logD(this)
+        logD("Fragment onCreate")
     }
 
     override fun onCreateView(
@@ -32,52 +32,52 @@ abstract class BaseLogFragment : BaseFragment(), LogImp {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        "Fragment onCreateView".logD(this)
+        logD("Fragment onCreateView")
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        "Fragment onActivityCreated".logD(this)
+        logD("Fragment onActivityCreated")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        "Fragment onViewCreated".logD(this)
+        logD("Fragment onViewCreated")
     }
 
     override fun onStart() {
         super.onStart()
-        "Fragment onStart".logD(this)
+        logD("Fragment onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        "Fragment onResume".logD(this)
+        logD("Fragment onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        "Fragment onPause".logD(this)
+        logD("Fragment onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        "Fragment onStop".logD(this)
+        logD("Fragment onStop")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        "Fragment onDestroyView".logD(this)
+        logD("Fragment onDestroyView")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        "Fragment onDestroy".logD(this)
+        logD("Fragment onDestroy")
     }
 
     override fun onDetach() {
         super.onDetach()
-        "Fragment onDetach".logD(this)
+        logD("Fragment onDetach")
     }
 }

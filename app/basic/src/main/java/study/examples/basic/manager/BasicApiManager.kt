@@ -53,7 +53,7 @@ class BasicApiManager : LogImp {
             val viewType = cardType.hashCode()
             val cardEnum = viewType.mapViewType2Enum()
             if (cardEnum == null) {
-                "the card type of $cardType is not found".logD(this@BasicApiManager)
+                logD("the card type of $cardType is not found")
             } else {
                 cards.add(TypeUtils.castToJavaBean(cardJson, cardEnum.cardItem).apply {
                     this.viewType = viewType

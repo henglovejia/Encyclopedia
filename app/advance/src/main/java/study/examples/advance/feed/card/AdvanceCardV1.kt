@@ -4,7 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import study.examples.advance.R
+import study.examples.advance.databinding.AdvanceListItemTvBinding
 import study.examples.advance.model.item.AdvanceCardV1Item
+import study.examples.component.ext.viewBinding
+import study.examples.router.RouterManager.routerTo
 
 /**
  * @author ZhangHeng
@@ -14,6 +17,8 @@ import study.examples.advance.model.item.AdvanceCardV1Item
  */
 
 class AdvanceCardV1(itemView: View) : BaseAdvanceCard<AdvanceCardV1Item>(itemView) {
+    private val binding by viewBinding<AdvanceListItemTvBinding>()
+
     companion object {
         fun createView(parent: ViewGroup): AdvanceCardV1 {
             return AdvanceCardV1(
@@ -23,6 +28,13 @@ class AdvanceCardV1(itemView: View) : BaseAdvanceCard<AdvanceCardV1Item>(itemVie
         }
     }
 
+    init {
+        binding.title.setOnClickListener {
+            fragment?.activity?.routerTo(data.uri)
+        }
+    }
+
     override fun bindView() {
+        binding.title.text = data.title
     }
 }

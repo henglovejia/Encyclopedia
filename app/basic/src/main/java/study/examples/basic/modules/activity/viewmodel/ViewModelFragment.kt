@@ -7,13 +7,15 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.basic.databinding.BasicViewModelFragmentBinding
+import study.examples.component.ext.viewBinding
 import study.examples.component.fragment.BaseVBFragment
 import study.examples.constant.basic.BASIC_VIEW_MODEL_FRAGMENT
 import java.lang.RuntimeException
 
 @Route(path = BASIC_VIEW_MODEL_FRAGMENT)
-class ViewModelFragment : BaseVBFragment<BasicViewModelFragmentBinding>() {
+class ViewModelFragment : BaseVBFragment() {
     private lateinit var mViewModel: BasicViewModel
+    private val mBinding by viewBinding<BasicViewModelFragmentBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +23,7 @@ class ViewModelFragment : BaseVBFragment<BasicViewModelFragmentBinding>() {
             mViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(activity!!.application))[BasicViewModel::class.java]
             mViewModel.testField = "ViewModelFragment"
             mViewModel.liveData.observe(this, {
-                binding.basicViewModelText1.text = it
+                mBinding.basicViewModelText1.text = it
             })
             return
         }
@@ -30,15 +32,9 @@ class ViewModelFragment : BaseVBFragment<BasicViewModelFragmentBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.basicViewModelText1.text = mViewModel.testField
-        binding.basicViewModelButton1.setOnClickListener {
+        mBinding.basicViewModelText1.text = mViewModel.testField
+        mBinding.basicViewModelButton1.setOnClickListener {
             mViewModel.liveData.value = "button click"
         }
     }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) = BasicViewModelFragmentBinding.inflate(inflater, container, false)
 }

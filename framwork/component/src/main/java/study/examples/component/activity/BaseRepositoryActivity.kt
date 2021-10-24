@@ -5,6 +5,6 @@ package study.examples.component.activity
  * @since 2021/1/20 4:57 下午
  * @email 932805400@qq.com
  */
-class BaseRepositoryActivity : BaseLogActivity() {
+class BaseRepositoryActivity : BaseVBActivity() {
 
 }

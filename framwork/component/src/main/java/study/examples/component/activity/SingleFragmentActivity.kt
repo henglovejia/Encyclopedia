@@ -6,5 +6,5 @@ package study.examples.component.activity
  * @email zhangheng@bilibili.com
  * @description
  */
-class SingleFragmentActivity : BaseLogActivity() {
+class SingleFragmentActivity : BaseVBActivity() {
 }

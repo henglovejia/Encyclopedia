@@ -50,4 +50,5 @@ dependencies {
     implementation thirdparty.'arouter-api'
     implementation thirdparty.'arouter-compiler'
     implementation thirdparty.'fresco'
+    compileOnly lifecycle.'common-java8'
 }

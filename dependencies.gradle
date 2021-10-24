@@ -45,6 +45,16 @@ ext {
                 'paging-compose'     : "androidx.paging:paging-compose:1.0.0-alpha12",
                 'navigation-ui'      : "androidx.navigation:navigation-ui-ktx:2.3.0"]
 
+    lifecycle =  [
+            'livedatacore'         : "androidx.lifecycle:lifecycle-livedata-core:$lifecycle_version",
+            'runtime'               : "androidx.lifecycle:lifecycle-runtime:$lifecycle_version",
+            'extensions'            : "androidx.lifecycle:lifecycle-process:$lifecycle_version",
+            'process'               : "androidx.lifecycle:lifecycle-process:$lifecycle_version",
+            'viewmodel'             : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version",
+            'compiler'              : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version",
+            'common-java8'          : "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    ]
+
     test = []
 
     kotlin_libs = ['reflect'    : "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version",

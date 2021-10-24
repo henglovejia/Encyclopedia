@@ -22,12 +22,12 @@ abstract class BaseCardAdapter<VH : BaseCardVH<T>, T : BaseCardItem>(
     override fun getTAG(): String = javaClass.simpleName
 
     override fun getItemCount(): Int {
-        "card item count:${cardRepository.cardItems.size}".logD(this)
+        logD("card item count:${cardRepository.cardItems.size}")
         return cardRepository.cardItems.size
     }
 
     override fun getItemViewType(position: Int): Int {
-        "card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}".logD(this)
+        logD("card item view type:${cardRepository.cardItems.getOrNull(position)?.viewType ?: 0}")
         return cardRepository.cardItems.getOrNull(position)?.viewType ?: 0
     }
 

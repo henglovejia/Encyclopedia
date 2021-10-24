@@ -16,6 +16,6 @@ abstract class BasePagingDataAdapter<T : Any, VH : RecyclerView.ViewHolder>(
 
     override fun onBindViewHolder(holder: VH, position: Int, payloads: MutableList<Any>) {
         super.onBindViewHolder(holder, position, payloads)
-        "onBindViewHolder".logD(this)
+        logD("onBindViewHolder")
     }
 }

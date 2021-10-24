@@ -8,22 +8,22 @@ import android.util.Log
  * @email 932805400@qq.com
  */
 
-fun String.logV(imp: LogImp) {
-    Log.v(imp.getTAG(), this)
+fun LogImp.logV(msg: String) {
+    Log.v(getTAG(), msg)
 }
 
-fun String.logD(imp: LogImp) {
-    Log.d(imp.getTAG(), this)
+fun LogImp.logD(msg: String) {
+    Log.d(getTAG(), msg)
 }
 
-fun String.logI(imp: LogImp) {
-    Log.i(imp.getTAG(), this)
+fun LogImp.logI(msg: String) {
+    Log.i(getTAG(), msg)
 }
 
-fun String.logW(imp: LogImp) {
-    Log.w(imp.getTAG(), this)
+fun LogImp.logW(msg: String) {
+    Log.w(getTAG(), msg)
 }
 
-fun String.logE(imp: LogImp) {
-    Log.e(imp.getTAG(), this)
+fun LogImp.logE(msg: String) {
+    Log.e(getTAG(), msg)
 }
