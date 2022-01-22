@@ -14,4 +14,6 @@ dependencies {
     implementation thirdparty.retrofit
     implementation thirdparty.'retrofit-rxjava'
     implementation thirdparty.'retrofit-gson'
+    implementation coroutine.core
+    implementation coroutine.android
 }

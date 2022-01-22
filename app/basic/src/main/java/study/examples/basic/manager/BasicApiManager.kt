@@ -3,6 +3,7 @@ package study.examples.basic.manager
 import android.content.res.AssetManager
 import com.alibaba.fastjson.JSONObject
 import com.alibaba.fastjson.util.TypeUtils
+import retrofit2.Call
 import rx.Observable
 import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers

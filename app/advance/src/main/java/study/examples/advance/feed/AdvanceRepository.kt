@@ -1,10 +1,13 @@
 package study.examples.advance.feed
 
+import android.content.res.AssetManager
 import com.examples.paging3.repository.BasePagingRepository
-import study.examples.advance.model.item.BaseAdvanceItem
+import study.examples.advance.model.AdvanceIndexResponse
+import study.examples.advance.network.AdvanceApiManager
 
-class AdvanceRepository : BasePagingRepository<BaseAdvanceItem>() {
-    override fun getData(startIndex: Long, endIndex: Long): List<BaseAdvanceItem> {
-        TODO("Not yet implemented")
+class AdvanceRepository(private val assetManager: AssetManager?) : BasePagingRepository<AdvanceIndexResponse>() {
+    private val mApiManager = AdvanceApiManager()
+    override suspend fun getData(startIndex: Long, endIndex: Long): AdvanceIndexResponse {
+        return mApiManager.getIndex(assetManager)
     }
 }

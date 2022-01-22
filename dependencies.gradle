@@ -12,6 +12,8 @@ ext {
     arouter_version = "1.5.1"
     paging_version = "3.0.1"
     lifecycle_version = "2.2.0"
+
+    coroutine_version = "1.4.3"
 }
 
 ext {
@@ -61,4 +63,9 @@ ext {
                    'stdlib'     : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
                    'stdlib-core': "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
                    'test-junit' : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"]
+
+    coroutine = [
+            'core'   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version",
+            'android': "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    ]
 }

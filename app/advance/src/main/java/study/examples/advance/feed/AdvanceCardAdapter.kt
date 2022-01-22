@@ -23,7 +23,7 @@ class AdvanceCardAdapter(private val fragment: Fragment) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseAdvanceCard<BaseAdvanceItem> {
         return when (viewType) {
-            ADVANCE_CARD_V1 -> AdvanceCardV1.createView(parent)
+            AdvanceCardType.ADVANCE_CARD_V1.viewType -> AdvanceCardV1.createView(parent)
             else -> AdvanceCardV1.createView(parent)
         } as BaseAdvanceCard<BaseAdvanceItem>
     }

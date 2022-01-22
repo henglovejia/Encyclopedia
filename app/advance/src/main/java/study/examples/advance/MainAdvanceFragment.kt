@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.advance.feed.AdvanceCardAdapter
 import com.examples.feed.fragment.BasePaging3Fragment
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import study.examples.advance.databinding.ActivityAdvanceMainBinding
 import study.examples.advance.lifecycle.AdvanceViewModel
@@ -29,9 +30,12 @@ class MainAdvanceFragment : BasePaging3Fragment<AdvanceCardAdapter>() {
         mAdapter = AdvanceCardAdapter(this)
         mBinding.recycleView.adapter = mAdapter
         lifecycleScope.launch {
-//            mViewModel.loadStateFlow.collectLatest { pagingData ->
-//                pagingAdapter.submitData(pagingData)
-//            }
+            mViewModel.cards.collect {
+                mAdapter.submitData(it)
+            }
+        }
+        mAdapter.addLoadStateListener {
+
         }
     }
 }

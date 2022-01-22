@@ -17,7 +17,7 @@ class AdvanceCardRepository<VH : BaseAdvanceCard<T>, T : BaseAdvanceItem> :
     BaseCardRepository<VH, T>() {
     override fun realCreate(parent: ViewGroup, viewType: Int): VH {
         return when (viewType) {
-            ADVANCE_CARD_V1 -> AdvanceCardV1.createView(parent)
+            AdvanceCardType.ADVANCE_CARD_V1.viewType -> AdvanceCardV1.createView(parent)
             else -> AdvanceCardV1.createView(parent)
         } as VH
     }
