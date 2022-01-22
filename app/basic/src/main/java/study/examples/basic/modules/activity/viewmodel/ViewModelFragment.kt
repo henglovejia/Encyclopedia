@@ -1,16 +1,13 @@
 package study.examples.basic.modules.activity.viewmodel
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import study.examples.basic.databinding.BasicViewModelFragmentBinding
 import study.examples.component.ext.viewBinding
 import study.examples.component.fragment.BaseVBFragment
 import study.examples.constant.basic.BASIC_VIEW_MODEL_FRAGMENT
-import java.lang.RuntimeException
 
 @Route(path = BASIC_VIEW_MODEL_FRAGMENT)
 class ViewModelFragment : BaseVBFragment() {

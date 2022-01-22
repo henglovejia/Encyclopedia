@@ -52,7 +52,7 @@ class MainBasicFragment : BaseListFragmentV1() {
         }, resources.assets)
     }
 
-    override fun getLayoutId() = R.layout.activity_basic_main
+    override fun getLayoutId() = R.layout.feed_empty_recycleview
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

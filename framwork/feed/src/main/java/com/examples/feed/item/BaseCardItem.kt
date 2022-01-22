@@ -6,6 +6,4 @@ package com.examples.feed.item
  * @email 932805400@qq.com
  * @description
  */
-abstract class BaseCardItem {
-    open var viewType: Int = 0
-}
+open class BaseCardItem(open var viewType: Int = 0)

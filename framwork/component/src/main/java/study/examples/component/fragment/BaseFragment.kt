@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.alibaba.android.arouter.launcher.ARouter
 
 /**
  * @author zhangHeng
@@ -13,10 +11,9 @@ import com.alibaba.android.arouter.launcher.ARouter
  * @email 932805400@qq.com
  * @actions 1、ARouter路由注册 2、布局文件获取
  */
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : BaseLogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ARouter.getInstance().inject(this)
     }
 
     override fun onCreateView(
@@ -32,5 +29,5 @@ abstract class BaseFragment : Fragment() {
 
     open fun beforeCreateView() {}
     abstract fun getLayoutId(): Int
-    abstract fun afterCreateView(view: View)
+    open fun afterCreateView(view: View) {}
 }

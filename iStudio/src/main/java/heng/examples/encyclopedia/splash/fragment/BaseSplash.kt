@@ -1,7 +1,7 @@
 package heng.examples.encyclopedia.splash.fragment
 
 import android.os.CountDownTimer
-import study.examples.component.fragment.BaseLogFragment
+import study.examples.component.fragment.BaseFragment
 
 /**
  * @author zhangHeng
@@ -11,7 +11,7 @@ import study.examples.component.fragment.BaseLogFragment
 const val FULL_IMAGE_TYPE = "full_image"
 const val HALF_IMAGE_TYPE = "half_image"
 
-abstract class BaseSplash : BaseLogFragment() {
+abstract class BaseSplash : BaseFragment() {
     var timerTask: CountDownTimer? = null
     abstract fun getSplashType(): String
     abstract fun onCountDownTick(millisUntilFinished: Long)

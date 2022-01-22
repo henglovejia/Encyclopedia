@@ -10,7 +10,7 @@ import study.examples.advance.model.item.BaseAdvanceItem
  * @email 932805400@qq.com
  * @description
  */
-val advanceCardTypes by lazy { enumValues<AdvanceCardType>() }
+val advanceCardTypes by lazy(LazyThreadSafetyMode.NONE) { enumValues<AdvanceCardType>() }
 
 enum class AdvanceCardType(
     val viewType: Int,
@@ -18,7 +18,7 @@ enum class AdvanceCardType(
     val cardItem: Class<out BaseAdvanceItem>
 ) {
     ADVANCE_CARD_V1(
-        "basic_card_v1".hashCode(),
+        "advance_card_v1".hashCode(),
         R.layout.advance_list_item_tv,
         AdvanceCardV1Item::class.java
     )

@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import study.examples.component.log.LogImp
 import study.examples.component.log.logD
 
-abstract class BaseVBFragment : BaseLogFragment(), LogImp {
+abstract class BaseVBFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         logD("Fragment onCreateView")
         return null

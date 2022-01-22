@@ -28,7 +28,7 @@ class MainDebugFragment : BaseListFragmentV2() {
     override fun tryPullDown() {
     }
 
-    override fun getLayoutId() = R.layout.fragment_debug_main
+    override fun getLayoutId() = R.layout.feed_empty_recycleview
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

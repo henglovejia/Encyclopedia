@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.alibaba.android.arouter.launcher.ARouter
 import study.examples.component.log.LogImp
 import study.examples.component.log.logD
 
@@ -14,7 +16,7 @@ import study.examples.component.log.logD
  * @email 932805400@qq.com
  * @actions 1、生命周期添加Log
  */
-abstract class BaseLogFragment : BaseFragment(), LogImp {
+abstract class BaseLogFragment : Fragment(), LogImp {
     override fun getTAG(): String = javaClass.simpleName
 
     override fun onAttach(context: Context) {
@@ -25,6 +27,7 @@ abstract class BaseLogFragment : BaseFragment(), LogImp {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         logD("Fragment onCreate")
+        ARouter.getInstance().inject(this)
     }
 
     override fun onCreateView(

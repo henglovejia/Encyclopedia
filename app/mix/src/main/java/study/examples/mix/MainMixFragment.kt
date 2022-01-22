@@ -26,13 +26,12 @@ class MainMixFragment : BaseListFragmentV2() {
     override fun tryPullDown() {
     }
 
-    override fun getLayoutId() = R.layout.activity_mix_main
+    override fun getLayoutId() = R.layout.feed_empty_recycleview
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mAdapter.addCard(MixCardV1Item())
         mRecyclerView.layoutManager = LinearLayoutManager(this.context)
         mRecyclerView.adapter = mAdapter
-        mAdapter.notifyDataSetChanged()
     }
 }

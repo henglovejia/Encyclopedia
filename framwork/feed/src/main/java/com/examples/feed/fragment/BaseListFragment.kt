@@ -2,6 +2,7 @@ package com.examples.feed.fragment
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import study.examples.component.fragment.BaseFragment
 import study.examples.component.fragment.BaseLogFragment
 
 /**
@@ -10,7 +11,7 @@ import study.examples.component.fragment.BaseLogFragment
  * @email 932805400@qq.com
  * @description
  */
-abstract class BaseListFragment : BaseLogFragment() {
+abstract class BaseListFragment : BaseFragment() {
     lateinit var mRecyclerView: RecyclerView
 
     override fun afterCreateView(view: View) {

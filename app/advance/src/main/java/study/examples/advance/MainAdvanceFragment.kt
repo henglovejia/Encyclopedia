@@ -1,17 +1,18 @@
 package study.examples.advance
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
+import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.examples.feed.databinding.FeedEmptyRecycleviewBinding
 import study.examples.advance.feed.AdvanceCardAdapter
-import com.examples.feed.fragment.BasePaging3Fragment
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
-import study.examples.advance.databinding.ActivityAdvanceMainBinding
-import study.examples.advance.lifecycle.AdvanceViewModel
+import study.examples.advance.feed.card.BaseAdvanceCard
+import study.examples.advance.model.item.AdvanceCardV1Item
+import study.examples.advance.model.item.BaseAdvanceItem
 import study.examples.component.ext.viewBinding
+import study.examples.component.fragment.BaseLogFragment
 import study.examples.constant.advance.ADVANCE_PAGE
 
 /**
@@ -21,21 +22,22 @@ import study.examples.constant.advance.ADVANCE_PAGE
  * @actions 进阶知识主页面
  */
 @Route(path = ADVANCE_PAGE)
-class MainAdvanceFragment : BasePaging3Fragment<AdvanceCardAdapter>() {
-    private val mViewModel by viewModels<AdvanceViewModel>()
-    private val mBinding by viewBinding<ActivityAdvanceMainBinding>()
+class MainAdvanceFragment : BaseLogFragment() {
+    private val mBinding by viewBinding<FeedEmptyRecycleviewBinding>()
+    private lateinit var mAdapter: AdvanceCardAdapter<BaseAdvanceCard<BaseAdvanceItem>>
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return mBinding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mAdapter = AdvanceCardAdapter(this)
+        mAdapter = AdvanceCardAdapter(
+            this, arrayListOf(
+                AdvanceCardV1Item("测试卡片", ""),
+            )
+        )
+        mBinding.recycleView.layoutManager = LinearLayoutManager(this.context)
         mBinding.recycleView.adapter = mAdapter
-        lifecycleScope.launch {
-            mViewModel.cards.collect {
-                mAdapter.submitData(it)
-            }
-        }
-        mAdapter.addLoadStateListener {
-
-        }
     }
 }
